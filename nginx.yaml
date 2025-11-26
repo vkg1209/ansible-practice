@@ -32,7 +32,7 @@
     - name: "Echo message"
       vars_files:
         - nginx-vars.yaml
-      vars:
+      #vars:
         # NAME: "Vinay Kumar"
       ansible.builtin.debug:
         msg: "{{NAME}} successfully started the nginx server"
