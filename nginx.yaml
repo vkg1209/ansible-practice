@@ -34,4 +34,4 @@
       #vars:
         # NAME: "Vinay Kumar"
       ansible.builtin.debug:
-        msg: "{{NAME}} successfully started the nginx server"
+        msg: "{{NAME}} successfully started the nginx server (Worth {{SALARY}})"
