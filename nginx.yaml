@@ -5,6 +5,6 @@
   tasks: 
   - name: "printing the names"
     ansible.builtin.debug:
-      msg: "Hello {{item}}"
-    loop: ["vinay", "siva", "rahul"]
+      msg: "Hello {{item.Name}} your id is {{item.id}}"
+    loop: [{Name: "Vinay", id: 24}, {Name: "Siva", id: 46}]
       
