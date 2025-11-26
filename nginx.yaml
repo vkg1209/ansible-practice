@@ -1,45 +1,11 @@
-- name: "Installing nginx server"
+- name: "Practicing if condition"
   hosts: "local"
-  connection: "local"
+  connnection: "local"
   become: "yes"
-  # vars_files:
-  #   - nginx-vars.yaml
-  # vars_prompt:
-  # - name: "NAME"
-  #   prompt: "What is your name"
-  #   private: true
-  # vars:
-  #   NAME: "Vinay Kumar"
-  #   ROLE: "DevOps"
-  #   SALARY: "20 Lakhs"
-  tasks:
-    - name: "install nginx"
-      ansible.builtin.package:
-        name: "nginx"
-        state: "present"
-    
-    - name: "Echo message"
-      ansible.builtin.debug:
-        msg: "{{NAME}} in the {{ROLE}} Department with {{SALARY}} written this program"
-
-- name: "Starting the nginx server"
-  hosts: "local"
-  connection: "local"
-  become: "yes"
-  # vars_files:
-  #   - nginx-vars.yaml
-  # vars_prompt:
-  # - name: "NAME"
-  #   prompt: "What is your name"
-  #   private: true
   tasks: 
-    - name: "starting the nginx server"
-      ansible.builtin.service: 
-        name: "nginx"
-        state: "started"
-    
-    - name: "Echo message"
-      #vars:
-        # NAME: "Vinay Kumar"
-      ansible.builtin.debug:
-        msg: "{{NAME}} successfully started the nginx server (Worth {{SALARY}})"
+  - name: "Checking the condition"
+    vars:
+      a: 10
+    ansible.builtin.debug:
+      msg: "{{a}} is less than 100"
+      when: a < 100
