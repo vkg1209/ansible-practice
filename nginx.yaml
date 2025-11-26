@@ -5,8 +5,8 @@
   vars_files:
     - nginx-vars.yaml
   vars_prompt:
-  - name: "What is your name: "
-    prompt: "NAME"
+  - name: "NAME"
+    prompt: "What is your name: "
     private: true
   # vars:
   #   NAME: "Vinay Kumar"
