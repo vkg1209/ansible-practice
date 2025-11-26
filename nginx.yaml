@@ -2,10 +2,12 @@
   hosts: "local"
   connection: "local"
   become: "yes"
-  vars:
-    NAME: "Vinay Kumar"
-    ROLE: "DevOps"
-    SALARY: "20 Lakhs"
+  vars_files:
+    -nginx-vars.ini
+  # vars:
+  #   NAME: "Vinay Kumar"
+  #   ROLE: "DevOps"
+  #   SALARY: "20 Lakhs"
   tasks:
     - name: "install nginx"
       ansible.builtin.package:
@@ -27,7 +29,9 @@
         state: "started"
     
     - name: "Echo message"
+      vars_files:
+        -nginx-vars.ini
       vars:
-        NAME: "Vinay Kumar"
+        # NAME: "Vinay Kumar"
       ansible.builtin.debug:
         msg: "{{NAME}} successfully started the nginx server"
