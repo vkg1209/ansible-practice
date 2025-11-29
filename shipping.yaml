@@ -52,7 +52,7 @@
 
   # installing the dependencies
   - name: installing the dependencies
-    ansible.general.command: mvn clean package 
+    ansible.builtin.command: mvn clean package 
     args:
       chdir: /app
 
