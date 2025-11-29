@@ -2,10 +2,7 @@
   hosts: payment
   become: yes
   vars:
-    packages: 
-    - python3
-    - gcc
-    - python3-devel
+    packages: ["python3","gcc","python3-devel"] 
   tasks: 
 
   # Installing all the python packages
