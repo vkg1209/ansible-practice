@@ -5,6 +5,7 @@
     instance_type: t3.micro
     security_group: sg-03c4d065bf7f7f94d
     image_id: ami-09c813fb71547fc4f
+  
   tasks: 
   - name: Creating EC2 Instances
     amazon.aws.ec2_instance:
@@ -12,27 +13,6 @@
       instance_type: "{{ instance_type }}"
       security_group: "{{ security_group }}"
       image_id: "{{ image_id }}"
-    loop: "{{ instances }}"
     register: output
+    loop: "{{ instances }}"
     
-
-# - name: create ec2 and r53
-#   hosts: local
-#   connection: local
-#   vars:
-#     ami_id: ami-09c813fb71547fc4f
-#     sg_id: sg-03c4d065bf7f7f94d # replace with your SG ID
-#     zone_id: "Z0948150OFPSYTNVYZOY" # replace with your ID
-#     domain_name: "daws86s.fun"
-
-#   tasks:
-#   - name: create ec2 instance
-#     amazon.aws.ec2_instance:
-#       name: "{{ item }}"
-#       instance_type: t3.micro
-#       security_group: "{{ sg_id }}"
-#       image_id: "{{ ami_id }}"
-#       tags:
-#         Name: "{{ item }}"
-#     loop: "{{ instances }}"
-#     register: ec2_output
