@@ -13,7 +13,7 @@
     ansible.builtin.dnf:
       name: "{{item}}"
       state: present
-    loop: packages
+    loop: "{{packages}}"
   
   # Creating roboshop system user
   # idempotent unlike the normal shell command
