@@ -18,7 +18,7 @@
       state: present
   
   # Creating roboshop system user
-  # idempotent unline the normal shell command
+  # idempotent unlike the normal shell command
   - name: creating roboshop system user
     ansible.builtin.user:
       name: roboshop
@@ -53,7 +53,7 @@
 
   # unzipping the catalogue file
   - name: extracting the catalogue file into app directory
-    ansible.builtin.unarchieve:
+    ansible.builtin.unarchive:
       source: /tmp/catalogue.zip
       dest: /app
       remote_src: yes

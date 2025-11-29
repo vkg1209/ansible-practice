@@ -53,7 +53,7 @@
 
   # unzipping the cart file
   - name: extracting the cart file into app directory
-    ansible.builtin.unarchieve:
+    ansible.builtin.unarchive:
       source: /tmp/cart.zip
       dest: /app
       remote_src: yes
