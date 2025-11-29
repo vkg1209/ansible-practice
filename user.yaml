@@ -66,7 +66,7 @@
   # copying user service file into /etc/systemd/system/user.service
   - name: copying user service file
     ansible.builtin.copy:
-      source: ./user.service
+      src: ./user.service
       dest: /etc/systemd/system/user.service
 
   # daemon reload, enabling service and startin it
