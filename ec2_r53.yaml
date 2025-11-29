@@ -10,13 +10,11 @@
   tasks: 
   - name: Creating EC2 Instances
     amazon.aws.ec2_instance:
-      name: "{{item}}"
-      instance_type: "{{instance_type}}"
-      security_group: "{{security_group}}"
-      image_id: "{{image_id}}"
-      tags:
-        Name: "{{ item }}"
-    loop: "{{instances}}"
+      name: "{{ item }}"
+      instance_type: "{{ instance_type }}"
+      security_group: "{{ security_group }}"
+      image_id: "{{ image_id }}"
+    loop: "{{ instances }}"
     register: output
     
 
