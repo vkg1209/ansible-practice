@@ -3,6 +3,11 @@
   become: yes
   tasks:
 
+  - name: loading the vault password
+    ansible.builtin.import_role:
+      name: vault
+      tasks_from: vault.yaml
+      
   - name: disabling default nginx version
     ansible.builtin.command: dnf module disable nginx -y
 
