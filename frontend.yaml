@@ -1,5 +1,5 @@
 - name: Configuring the frontend server
-  hosts: frontend
+  hosts: dynamic_frontend
   become: yes
   tasks:
 
