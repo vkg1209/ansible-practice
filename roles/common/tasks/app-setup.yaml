@@ -5,6 +5,8 @@
     system: true
     shell: /sbin/nologin
     home: /app
+  tags:
+    - deployment
 
 - name: deleting the app directory
   ansible.builtin.file:
