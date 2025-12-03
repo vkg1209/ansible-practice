@@ -1,5 +1,5 @@
 - name: Configuring the frontend server
-  hosts: dynamic_frontend
+  hosts: frontend
   become: yes
   tasks:
 
@@ -7,7 +7,7 @@
     ansible.builtin.import_role:
       name: vault
       tasks_from: vault.yaml
-      
+
   - name: disabling default nginx version
     ansible.builtin.command: dnf module disable nginx -y
 
