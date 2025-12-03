@@ -1,4 +1,4 @@
-- name: Setting up {component} server
+- name: Setting up {{component}} server
   hosts: "{{component}}"
   become: yes
   roles:
